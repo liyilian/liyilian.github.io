@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>iOS之蓝牙简介和使用(一)：GameKit | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS之蓝牙简介和使用(一)：GameKit蓝牙GameKit简介：  实现蓝牙设备之间的通讯  只能使用在iOS设备之间同一个应用内连接  从iOS7开始过期了">
+<meta name="keywords" content="所有文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS之蓝牙简介和使用(一)：GameKit">
+<meta property="og:url" content="http://yoursite.com/2017/05/09/GameKit/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="iOS之蓝牙简介和使用(一)：GameKit蓝牙GameKit简介：  实现蓝牙设备之间的通讯  只能使用在iOS设备之间同一个应用内连接  从iOS7开始过期了">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-05-09T09:25:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS之蓝牙简介和使用(一)：GameKit">
+<meta name="twitter:description" content="iOS之蓝牙简介和使用(一)：GameKit蓝牙GameKit简介：  实现蓝牙设备之间的通讯  只能使用在iOS设备之间同一个应用内连接  从iOS7开始过期了">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-GameKit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/09/GameKit/" class="article-date">
+  <time datetime="2017-05-09T09:02:43.000Z" itemprop="datePublished">2017-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS之蓝牙简介和使用(一)：GameKit
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="iOS之蓝牙简介和使用-一-：GameKit"><a href="#iOS之蓝牙简介和使用-一-：GameKit" class="headerlink" title="iOS之蓝牙简介和使用(一)：GameKit"></a>iOS之蓝牙简介和使用(一)：GameKit</h2><h2 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h2><h3 id="GameKit"><a href="#GameKit" class="headerlink" title="GameKit"></a>GameKit</h3><p>简介：</p>
+<ul>
+<li><p>实现蓝牙设备之间的通讯</p>
+</li>
+<li><p>只能使用在iOS设备之间同一个应用内连接</p>
+</li>
+<li><p>从iOS7开始过期了</p>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>但是GameKit是最基本的蓝牙通讯框架</p>
+</li>
+<li><p>通过蓝牙可以实现文件的共享（仅限设备沙盒中的文件）</p>
+</li>
+<li><p>此框架一般用于游戏开发（比如五子棋对战）</p>
+</li>
+</ul>
+<h3 id="开始案例"><a href="#开始案例" class="headerlink" title="开始案例"></a>开始案例</h3><p>简介：</p>
+<ul>
+<li><p>使用蓝牙将两个iOS设备连接起来</p>
+</li>
+<li><p>搜索对方的设备</p>
+</li>
+<li><p>实现将手机中的图片发送给对方</p>
+</li>
+</ul>
+<h3 id="界面的搭建："><a href="#界面的搭建：" class="headerlink" title="界面的搭建："></a>界面的搭建：</h3><h3 id="蓝牙互连："><a href="#蓝牙互连：" class="headerlink" title="蓝牙互连："></a>蓝牙互连：</h3><ul>
+<li><p>搜索蓝牙设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 初始化链接蓝牙控制器</span><br><span class="line">   GKPeerPickerController *peerCtr = [[GKPeerPickerController alloc]init];</span><br><span class="line">   // 显示匹配到的蓝牙设备</span><br><span class="line">   [peerCtr show];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>GKPeerPickerController最重要的两个代理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  链接成功</span><br><span class="line"> *</span><br><span class="line"> *  @param picker  蓝牙控制器</span><br><span class="line"> *  @param peerID  连接蓝牙的设备id</span><br><span class="line"> *  @param session 连接蓝牙的会话（通讯）用来传数据</span><br><span class="line"> */</span><br><span class="line">- (void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)session</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">    // 隐藏蓝牙控制器</span><br><span class="line">    [picker dismiss];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 退出连接</span><br><span class="line">- (void)peerPickerControllerDidCancel:  (GKPeerPickerController *)picker</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="选择图片："><a href="#选择图片：" class="headerlink" title="选择图片："></a>选择图片：</h3><ul>
+<li><p>选择图片方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> // 选择图片</span><br><span class="line">- (IBAction)chooseImage &#123;</span><br><span class="line">    // 1.初始化图片选择控制器</span><br><span class="line">    UIImagePickerController *imgPicker = [[UIImagePickerController alloc]init];</span><br><span class="line">    // 2.判断图库是否可用</span><br><span class="line">    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) &#123;</span><br><span class="line">        // 3.设置图库打开的类型</span><br><span class="line">        imgPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;</span><br><span class="line">        // 4. 设置代理</span><br><span class="line">        imgPicker.delegate = self;</span><br><span class="line">        // 5. 打开图库</span><br><span class="line">        [self presentViewController:imgPicker animated:YES completion:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>选择图片控制器的代理方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> /**</span><br><span class="line"> *  图片选择完成调用</span><br><span class="line"> *</span><br><span class="line"> *  @param picker 图片选择控制器</span><br><span class="line"> *  @param info   选择的信息</span><br><span class="line"> */</span><br><span class="line">- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary&lt;NSString *,id&gt; *)info</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;info == %@&quot;,info);</span><br><span class="line">    // 设置选择的图片为当前的显示图片</span><br><span class="line">    self.showImageView.image = info[UIImagePickerControllerOriginalImage];</span><br><span class="line">    // 隐藏当前选择图片控制器</span><br><span class="line">    [picker dismissViewControllerAnimated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="图片相互发送："><a href="#图片相互发送：" class="headerlink" title="图片相互发送："></a>图片相互发送：</h3><ul>
+<li><p>需要在连接成功代理方法中存储当前的会话</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 保存当前回话</span><br><span class="line">   self.m_Session = session;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>发送图片方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> // 发送图片</span><br><span class="line">- (IBAction)sendImage &#123;</span><br><span class="line"></span><br><span class="line">    // 拿到需要发送出去的图片</span><br><span class="line">    UIImage *image = self.showImageView.image;</span><br><span class="line">    // 将图片转换成NSData类型</span><br><span class="line">    NSData *imgData = UIImagePNGRepresentation(image);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *  发送数据给所有匹配上的用户</span><br><span class="line">     *</span><br><span class="line">     *  @param GKSendDataMode 数据发送的模式：（安全/不安全模式）</span><br><span class="line">     *                        GKSendDataUnreliable : 不安全模式：就像发10个传单，传单直接往人群中砸过去，能不能收到不管</span><br><span class="line">     *                        GKSendDataReliable：安全模式：就像发10个传单，每一个传单都得发到路人的手上，才再发下一个传单</span><br><span class="line">     *  @return</span><br><span class="line">     */</span><br><span class="line">    [self.m_Session sendDataToAllPeers:imgData withDataMode:GKSendDataUnreliable error:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="设置图片："><a href="#设置图片：" class="headerlink" title="设置图片："></a>设置图片：</h3><ul>
+<li><p>GameKit提供的接受数据是方法的回调</p>
+<ul>
+<li><p>需要监听接收传递过来的数据 </p>
+<blockquote>
+<p>在连接成功代理方法中设置监听</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/** 监听传递过来的数据</span><br><span class="line">  *  setDataReceiveHandler: 由哪个对象来监听数据的接受</span><br><span class="line">  *  withContext ： 监听需要传递的参数</span><br><span class="line">  */</span><br><span class="line"> [session setDataReceiveHandler:self withContext:nil];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>实现监听方法</p>
+<blockquote>
+<p>只设置由谁监听传递过来的数据还是不足的，因为我们还是不能拿到传递过来的数据，进入监听方法的头文件可以看到</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// SEL = -receiveData:fromPeer:inSession:context:</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>所以我们必须实现这个方法才能拿到接收到的数据，这个回调方法方法在Xcode 7之前的版本的解释如图：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line"> *  实现接收数据的回调方法</span><br><span class="line"> *</span><br><span class="line"> *  @param data    接收到的数据</span><br><span class="line"> *  @param peer    传递数据的设备ID</span><br><span class="line"> *  @param session 当前回话</span><br><span class="line"> *  @param context 注册监听传递过来的数据</span><br><span class="line"> */</span><br><span class="line">- (void) receiveData:(NSData *)data fromPeer:(NSString *)peer inSession: (GKSession *)session context:(void *)context</span><br><span class="line">&#123;</span><br><span class="line">    // 因为传递过来的是图片，所以我们直接使用UIImage来接受</span><br><span class="line">    UIImage *image = [UIImage imageWithData:data];</span><br><span class="line">    // 设置图片</span><br><span class="line">    self.showImageView.image = image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p> 原文地址：<a href="#http://blog.csdn.net/wzc10101415/article/details/55101321">http://blog.csdn.net/wzc10101415/article/details/55101321</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/09/GameKit/" data-id="cjl4vxvz10002tjfnplhmadoe" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/所有文章/">所有文章</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/09/MutipeerConnectivity/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          iOS之蓝牙简介和使用(二)：MutipeerConnectivity
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/09/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/所有文章/">所有文章</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/所有文章/" style="font-size: 10px;">所有文章</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/19/cocoaPods/">cocoaPods的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/Native-js/">Native.js</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/reactNative/">react native的优缺点</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/12/easemob/">cocoaPods导入环信Hyphenate时出的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/CoreBlueTooth/">CoreBlueTooth</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

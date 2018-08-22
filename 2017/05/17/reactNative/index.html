@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>react native的优缺点 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="React Native 优缺点分析经过一长篇的讨论，其实 React Native 的优缺点已经不难分析了，这里简单总结一下： 优点 复用了 React 的思想，有利于前端开发者涉足移动端。 能够利用 JavaScript 动态更新的特性，快速迭代。 相比于原生平台，开发速度更快，相比于 Hybrid 框架，性能更好  缺点 做不到 Write once, Run everywhere，也就是">
+<meta name="keywords" content="所有文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react native的优缺点">
+<meta property="og:url" content="http://yoursite.com/2017/05/17/reactNative/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="React Native 优缺点分析经过一长篇的讨论，其实 React Native 的优缺点已经不难分析了，这里简单总结一下： 优点 复用了 React 的思想，有利于前端开发者涉足移动端。 能够利用 JavaScript 动态更新的特性，快速迭代。 相比于原生平台，开发速度更快，相比于 Hybrid 框架，性能更好  缺点 做不到 Write once, Run everywhere，也就是">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-05-17T09:55:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react native的优缺点">
+<meta name="twitter:description" content="React Native 优缺点分析经过一长篇的讨论，其实 React Native 的优缺点已经不难分析了，这里简单总结一下： 优点 复用了 React 的思想，有利于前端开发者涉足移动端。 能够利用 JavaScript 动态更新的特性，快速迭代。 相比于原生平台，开发速度更快，相比于 Hybrid 框架，性能更好  缺点 做不到 Write once, Run everywhere，也就是">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-reactNative" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/17/reactNative/" class="article-date">
+  <time datetime="2017-05-17T07:29:03.000Z" itemprop="datePublished">2017-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react native的优缺点
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="React-Native-优缺点分析"><a href="#React-Native-优缺点分析" class="headerlink" title="React Native 优缺点分析"></a>React Native 优缺点分析</h2><p>经过一长篇的讨论，其实 React Native 的优缺点已经不难分析了，这里简单总结一下：</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>复用了 React 的思想，有利于前端开发者涉足移动端。</li>
+<li>能够利用 JavaScript 动态更新的特性，快速迭代。</li>
+<li>相比于原生平台，开发速度更快，相比于 Hybrid 框架，性能更好</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li><p>做不到 <code>Write once, Run everywhere</code>，也就是说开发者依然需要为 iOS 和 Android 平台提供两套不同的代码，比如参考<a href="#https://facebook.github.io/react-native/docs/getting-started.html">官方文档</a>可以发现不少组件和API都区分了 Android 和 iOS 版本。即使是共用组件，也会有平台独享的函数。</p>
+</li>
+<li><p>不能做到完全屏蔽 iOS 端或 Android 的细节，前端开发者必须对原生平台有所了解。加重了学习成本。对于移动端开发者来说，完全不具备用 React Native 开发的能力。</p>
+</li>
+<li><p>由于 Objective-C 与 JavaScript 之间切换存在固定的时间开销，所以性能必定不及原生。比如目前的官方版本无法做到 UItableview(ListView) 的视图重用，因为滑动过程中，视图重用需要在异步线程中执行，速度太慢。这也就导致随着 Cell 数量的增加，占用的内存也线性增加。</p>
+</li>
+</ol>
+<p>综上，我对 React Native 的定位是：</p>
+<blockquote>
+<p>利用脚本语言进行原生平台开发的一次成功尝试，降低了前端开发者入门移动端的门槛，一定业务场景下具有独特的优势，几乎不可能取代原生平台开发。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/17/reactNative/" data-id="cjl4vxvzg000etjfnq3ok6s7z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/所有文章/">所有文章</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/17/Native-js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Native.js
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/12/easemob/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">cocoaPods导入环信Hyphenate时出的问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/所有文章/">所有文章</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/所有文章/" style="font-size: 10px;">所有文章</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/19/cocoaPods/">cocoaPods的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/Native-js/">Native.js</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/reactNative/">react native的优缺点</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/12/easemob/">cocoaPods导入环信Hyphenate时出的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/CoreBlueTooth/">CoreBlueTooth</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

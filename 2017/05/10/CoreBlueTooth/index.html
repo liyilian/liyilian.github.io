@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CoreBlueTooth | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS之蓝牙简介和使用(三)：CoreBlueToothCoreBlueTooth简介： 可用于第三方蓝牙设备交互，设备必须支持蓝牙4.0 iPhone的设备必须是4S或者更新 iPad设备必须是iPad mini或者更新 iOS的系统必须是iOS 6或者更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CoreBlueTooth">
+<meta property="og:url" content="http://yoursite.com/2017/05/10/CoreBlueTooth/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="iOS之蓝牙简介和使用(三)：CoreBlueToothCoreBlueTooth简介： 可用于第三方蓝牙设备交互，设备必须支持蓝牙4.0 iPhone的设备必须是4S或者更新 iPad设备必须是iPad mini或者更新 iOS的系统必须是iOS 6或者更新">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-05-10T02:15:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CoreBlueTooth">
+<meta name="twitter:description" content="iOS之蓝牙简介和使用(三)：CoreBlueToothCoreBlueTooth简介： 可用于第三方蓝牙设备交互，设备必须支持蓝牙4.0 iPhone的设备必须是4S或者更新 iPad设备必须是iPad mini或者更新 iOS的系统必须是iOS 6或者更新">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CoreBlueTooth" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/10/CoreBlueTooth/" class="article-date">
+  <time datetime="2017-05-10T02:02:01.000Z" itemprop="datePublished">2017-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CoreBlueTooth
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="iOS之蓝牙简介和使用-三-：CoreBlueTooth"><a href="#iOS之蓝牙简介和使用-三-：CoreBlueTooth" class="headerlink" title="iOS之蓝牙简介和使用(三)：CoreBlueTooth"></a>iOS之蓝牙简介和使用(三)：CoreBlueTooth</h2><h2 id="CoreBlueTooth"><a href="#CoreBlueTooth" class="headerlink" title="CoreBlueTooth"></a>CoreBlueTooth</h2><h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><ul>
+<li>可用于第三方蓝牙设备交互，设备必须支持蓝牙4.0</li>
+<li>iPhone的设备必须是4S或者更新</li>
+<li>iPad设备必须是iPad mini或者更新</li>
+<li>iOS的系统必须是iOS 6或者更新</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>蓝牙4.0以低功耗著称，所以一般被称为BLE（bluetooth low energy）</li>
+</ul>
+<h3 id="使用模拟器调试"><a href="#使用模拟器调试" class="headerlink" title="使用模拟器调试"></a>使用模拟器调试</h3><ul>
+<li>Xcode 4.6</li>
+<li>iOS 6.1</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>运动手环</li>
+<li>智能家居</li>
+<li>拉卡拉蓝牙刷卡器</li>
+</ul>
+<h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ul>
+<li>CBCentralManager：中心设备（用来连接到外部设备的管家）</li>
+<li>CBPeripheralManager：外部设备（第三方的蓝牙4.0设备）<br>这里写图片描述</li>
+</ul>
+<h3 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h3><ul>
+<li>建立中心管家</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 1. 创建中心管家,并且设置代理</span><br><span class="line">self.cmgr = [[CBCentralManager alloc]initWithDelegate:self queue:nil];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>扫描外设（discover）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 2. 在代理方法中扫描外部设备</span><br><span class="line"> /**</span><br><span class="line">  *  scanForPeripheralsWithServices ：如果传入指定的数组，那么就只会扫描数组中对应ID的设备</span><br><span class="line">  *                                   如果传入nil，那么就是扫描所有可以发现的设备</span><br><span class="line">  *  扫描完外部设备就会通知CBCentralManager的代理</span><br><span class="line">  */</span><br><span class="line"> - (void)centralManagerDidUpdateState:(CBCentralManager *)central</span><br><span class="line">&#123;</span><br><span class="line">    if ([central state] == CBCentralManagerStatePoweredOn) &#123;</span><br><span class="line">        [self.cmgr scanForPeripheralsWithServices:nil options:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  发现外部设备，每发现一个就会调用这个方法</span><br><span class="line"> *  所以可以使用一个数组来存储每次扫描完成的数组</span><br><span class="line"> */</span><br><span class="line">- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary&lt;NSString *,id&gt; *)advertisementData RSSI:(NSNumber *)RSSI</span><br><span class="line">&#123;</span><br><span class="line">    // 有可能会导致重复添加扫描到的外设</span><br><span class="line">    // 所以需要先判断数组中是否包含这个外设</span><br><span class="line">    if(![self.peripherals containsObject:peripheral])&#123;</span><br><span class="line">        [self.peripherals addObject:peripheral];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>连接外设</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  模拟开始连接方法</span><br><span class="line"> */</span><br><span class="line">- (void)start</span><br><span class="line">&#123;</span><br><span class="line">    // 3. 连接外设</span><br><span class="line">    for (CBPeripheral *ppl in self.peripherals) &#123;</span><br><span class="line">        // 扫描外设的服务</span><br><span class="line">        // 这个操作应该交给外设的代理方法来做</span><br><span class="line">        // 设置代理</span><br><span class="line">        ppl.delegate = self;</span><br><span class="line">        [self.cmgr connectPeripheral:ppl options:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>扫描外设中的服务和特征</p>
+<ul>
+<li>服务和特征的关系</li>
+</ul>
+<blockquote>
+<p>每个蓝牙4.0的设备都是通过服务和特征来展示自己的，一个设备必然包含一个或多个服务，每个服务下面又包含若干个特征。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  连接外设成功调用</span><br><span class="line"> */</span><br><span class="line">- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral</span><br><span class="line">&#123;</span><br><span class="line">    // 查找外设服务</span><br><span class="line">    [peripheral discoverServices:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  发现服务就会调用代理方法</span><br><span class="line"> *</span><br><span class="line"> *  @param peripheral 外设</span><br><span class="line"> */</span><br><span class="line">- (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error</span><br><span class="line">&#123;</span><br><span class="line">    // 扫描到设备的所有服务</span><br><span class="line">    NSArray *services = peripheral.services;</span><br><span class="line">    // 根据服务再次扫描每个服务对应的特征</span><br><span class="line">    for (CBService *ses in services) &#123;</span><br><span class="line">        [peripheral discoverCharacteristics:nil forService:ses];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>与外设做数据交互 <ul>
+<li>在指定的特征下做相应的操作</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  发现服务对应的特征</span><br><span class="line"> */</span><br><span class="line">- (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error</span><br><span class="line">&#123;</span><br><span class="line">    // 服务对应的特征</span><br><span class="line">    NSArray *ctcs = service.characteristics;</span><br><span class="line">    // 遍历所有的特征</span><br><span class="line">    for (CBCharacteristic *character in ctcs) &#123;</span><br><span class="line">        // 根据特征的唯一标示过滤</span><br><span class="line">        if ([character.UUID.UUIDString isEqualToString:@&quot;XMG&quot;]) &#123;</span><br><span class="line">            NSLog(@&quot;可以吃饭了&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>断开连接</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  断开连接</span><br><span class="line"> */</span><br><span class="line">- (void)stop</span><br><span class="line">&#123;</span><br><span class="line">    // 断开所有连接上的外设</span><br><span class="line">    for (CBPeripheral *per in self.peripherals) &#123;</span><br><span class="line">        [self.cmgr cancelPeripheralConnection:per];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原文地址：<a href="#http://blog.csdn.net/wzc10101415/article/details/55101405">http://blog.csdn.net/wzc10101415/article/details/55101405</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/10/CoreBlueTooth/" data-id="cjl4vxvyt0000tjfni2qs5y3t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/12/easemob/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          cocoaPods导入环信Hyphenate时出的问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/09/MutipeerConnectivity/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">iOS之蓝牙简介和使用(二)：MutipeerConnectivity</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/所有文章/">所有文章</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/所有文章/" style="font-size: 10px;">所有文章</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/19/cocoaPods/">cocoaPods的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/Native-js/">Native.js</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/reactNative/">react native的优缺点</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/12/easemob/">cocoaPods导入环信Hyphenate时出的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/CoreBlueTooth/">CoreBlueTooth</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>iOS之蓝牙简介和使用(二)：MutipeerConnectivity | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity蓝牙mutipeerConnectivity简介  iOS 7引入的一个全新框架  多点连接  替代GameKit框架">
+<meta name="keywords" content="所有文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity">
+<meta property="og:url" content="http://yoursite.com/2017/05/09/MutipeerConnectivity/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity蓝牙mutipeerConnectivity简介  iOS 7引入的一个全新框架  多点连接  替代GameKit框架">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-05-10T00:51:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity">
+<meta name="twitter:description" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity蓝牙mutipeerConnectivity简介  iOS 7引入的一个全新框架  多点连接  替代GameKit框架">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MutipeerConnectivity" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/09/MutipeerConnectivity/" class="article-date">
+  <time datetime="2017-05-09T09:52:31.000Z" itemprop="datePublished">2017-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS之蓝牙简介和使用(二)：MutipeerConnectivity
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="iOS之蓝牙简介和使用-二-：MutipeerConnectivity"><a href="#iOS之蓝牙简介和使用-二-：MutipeerConnectivity" class="headerlink" title="iOS之蓝牙简介和使用(二)：MutipeerConnectivity"></a>iOS之蓝牙简介和使用(二)：MutipeerConnectivity</h2><h2 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h2><h3 id="mutipeerConnectivity"><a href="#mutipeerConnectivity" class="headerlink" title="mutipeerConnectivity"></a>mutipeerConnectivity</h3><p>简介</p>
+<ul>
+<li><p>iOS 7引入的一个全新框架</p>
+</li>
+<li><p>多点连接</p>
+</li>
+<li><p>替代GameKit框架</p>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>多用于文件的传输</p>
+</li>
+<li><p>iOS设备不联网也能跟附近的人聊天</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* FireChat</span><br><span class="line">* See You Around</span><br><span class="line">* 以上近场聊天App都是基于mutipeerConnectivity框架</span><br></pre></td></tr></table></figure>
+<ul>
+<li>搜索和传输的方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 双方WIFI和蓝牙都没有打开：无法实现</span><br><span class="line">* 双方都开启蓝牙：通过蓝牙发现和传输</span><br><span class="line">* 双方都开启WIFI：通过WIFI Direct发现和传输，速度接近AirDrop</span><br><span class="line">* 双方同时开启了WIFI和蓝牙：模拟AirDrop，通过低功耗蓝牙技术扫描发现握手，然后通过WIFI Direct传输</span><br></pre></td></tr></table></figure>
+<h3 id="案例界面搭建"><a href="#案例界面搭建" class="headerlink" title="案例界面搭建"></a>案例界面搭建</h3><h3 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h3><ul>
+<li>创建MCSession对象用于存放当前连接的会话</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建MCSession对象</span><br><span class="line">// initWithPeer：设备的ID</span><br><span class="line">// 用于存放当前的连接的会话</span><br><span class="line">self.mc_Session = [ [MCSession alloc]initWithPeer:[[MCPeerID alloc] initWithDisplayName:[UIDevice currentDevice].name]];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>开启广播对象，通知正在搜索的设备他们是可用的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *   只要开启了可被搜索的广播，那么连接蓝牙按钮就不可点</span><br><span class="line"> */</span><br><span class="line">- (IBAction)foundConnect:(id)sender &#123;</span><br><span class="line">    UISwitch *switchBtn = (UISwitch *)sender;</span><br><span class="line">    if (switchBtn.isOn) &#123;</span><br><span class="line">        // 广播对象，告诉其它的设备他们是可用的</span><br><span class="line">        if (self.advertiserAssistant == nil) &#123;</span><br><span class="line">            // 创建广播对象</span><br><span class="line">            //  initWithServiceType： 广播类型的标示（因为广播可能比较多，所以最好每个广播绑定一个唯一标示）</span><br><span class="line">            //  session：当前会话</span><br><span class="line">            //  discoveryInfo： 广播信息</span><br><span class="line">            self.advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:SERVICE_TYPE discoveryInfo:nil session:self.mc_Session];</span><br><span class="line">        &#125;</span><br><span class="line">        // 开启广播</span><br><span class="line">        [self.advertiserAssistant start];</span><br><span class="line">        self.connectBT.enabled = NO;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.connectBT.enabled = YES;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>开始搜索蓝牙设备</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)connectBlueTooth &#123;</span><br><span class="line">    // 创建搜索蓝牙设备控制器</span><br><span class="line">    MCBrowserViewController *mbVC = [[MCBrowserViewController alloc]initWithServiceType:SERVICE_TYPE session:self.mc_Session];</span><br><span class="line">    // 设置控制器代理</span><br><span class="line">    mbVC.delegate = self;</span><br><span class="line">    // 跳转到搜索控制器</span><br><span class="line">    [self presentViewController:mbVC animated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择数据"><a href="#选择数据" class="headerlink" title="选择数据"></a>选择数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)selectImage &#123;</span><br><span class="line">    // 1. 创建图片选择器</span><br><span class="line">    UIImagePickerController *imgPicker = [[UIImagePickerController alloc]init];</span><br><span class="line">    // 2. 判断图片选择器是否可用</span><br><span class="line">    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) &#123;</span><br><span class="line">        // 选择器打开的类型</span><br><span class="line">        imgPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;</span><br><span class="line">        // 设置代理</span><br><span class="line">        imgPicker.delegate = self;</span><br><span class="line">        // 打开图片选择器</span><br><span class="line">        [self presentViewController:imgPicker animated:YES completion:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>图片选择器代理中获取数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 选择完毕调用</span><br><span class="line">- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary&lt;NSString *,id&gt; *)info</span><br><span class="line">&#123;</span><br><span class="line">//    NSLog(@&quot;info == %@&quot;,info);</span><br><span class="line">    // 设置显示图片</span><br><span class="line">    self.showImage.image = info[UIImagePickerControllerOriginalImage];</span><br><span class="line">    // 隐藏图片显示器</span><br><span class="line">    [picker dismissViewControllerAnimated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在搜索控制器的连接完成的代理方法中隐藏搜索控制器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  连接完成</span><br><span class="line"> *</span><br><span class="line"> *  @param browserViewController 搜索控制器</span><br><span class="line"> */</span><br><span class="line">- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController</span><br><span class="line">&#123;</span><br><span class="line">    [browserViewController dismissViewControllerAnimated:YES completion:nil];</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h3><ul>
+<li>实现搜索控制器的代理方法，获取连接上的设备ID</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - MCBrowserViewControllerDelegate</span><br><span class="line">/**</span><br><span class="line"> *  连接成功</span><br><span class="line"> *</span><br><span class="line"> *  @param browserViewController 搜索控制器</span><br><span class="line"> *  @param peerID                连接上的设备ID</span><br><span class="line"> *  @param info                  连接的信息</span><br><span class="line"> *</span><br><span class="line"> *  @return                      YES ： 只发送连接上的用户</span><br><span class="line"> */</span><br><span class="line">- (BOOL)browserViewController:(MCBrowserViewController *)browserViewController</span><br><span class="line">      shouldPresentNearbyPeer:(MCPeerID *)peerID</span><br><span class="line">            withDiscoveryInfo:(nullable NSDictionary&lt;NSString *, NSString *&gt; *)info</span><br><span class="line">&#123;</span><br><span class="line">    self.peerID = peerID;</span><br><span class="line">    NSLog(@&quot;info == %@   peer = %@&quot;,info, peerID);</span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将图片发送给连接上的ID</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)sendImage &#123;</span><br><span class="line">    // 获取图片</span><br><span class="line">    UIImage *image = self.showImage.image;</span><br><span class="line">    // 将图片转换成NSData类型</span><br><span class="line">    NSData *data = UIImagePNGRepresentation(image);</span><br><span class="line">    /**</span><br><span class="line">     *  发送数据</span><br><span class="line">     *  toPeers ： 发给的设备ID的数组</span><br><span class="line">     *  withMode： 发送模式，是否是安全模式</span><br><span class="line">     */</span><br><span class="line">    if (self.peerID != nil) &#123;</span><br><span class="line">        [self.mc_Session sendData:data toPeers:@[self.peerID] withMode:MCSessionSendDataUnreliable error:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><ul>
+<li>实现MCSession的代理方法接受数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">    NSLog(@&quot;data = %@ , peer = %@&quot;,data,peerID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="显示数据"><a href="#显示数据" class="headerlink" title="显示数据"></a>显示数据</h3><ul>
+<li>在MCSeesion代理方法中设置获取过来的数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 接收的数据</span><br><span class="line">- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">//    NSLog(@&quot;data = %@ , peer = %@&quot;,data,peerID);</span><br><span class="line">    UIImage *image = [[UIImage alloc]initWithData:data];</span><br><span class="line">    if(image != nil)&#123;</span><br><span class="line">        // 设置数据</span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            self.showImage.image = image;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原文地址：<a href="#http://blog.csdn.net/wzc10101415/article/details/55101346">http://blog.csdn.net/wzc10101415/article/details/55101346</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/09/MutipeerConnectivity/" data-id="cjl4vxvyz0001tjfn48eaflpp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/所有文章/">所有文章</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/10/CoreBlueTooth/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CoreBlueTooth
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/09/GameKit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">iOS之蓝牙简介和使用(一)：GameKit</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/所有文章/">所有文章</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/所有文章/" style="font-size: 10px;">所有文章</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/19/cocoaPods/">cocoaPods的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/Native-js/">Native.js</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/reactNative/">react native的优缺点</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/12/easemob/">cocoaPods导入环信Hyphenate时出的问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/CoreBlueTooth/">CoreBlueTooth</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
