@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://baidu.com/categories/index.html</loc>
+    
+    <lastmod>2018-08-23T08:51:59.916Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://baidu.com/tags/index.html</loc>
     
     <lastmod>2018-08-23T08:50:08.726Z</lastmod>
