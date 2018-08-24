@@ -4,37 +4,16 @@
 
     
   <url>
-    <loc>http://baidu.com/2016/05/19/cocoaPods/</loc>
-    <lastmod>2018-08-24T08:58:12.664Z</lastmod>
-    <data>
-        <display>
-        <title>cocoaPods的使用</title>
-        <pubTime>2016-05-19T06:21:59.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS" url="http://baidu.com/categories/iOS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
-  <url>
     <loc>http://baidu.com/2016/05/05/runtime/</loc>
-    <lastmod>2018-08-23T07:45:36.424Z</lastmod>
+    <lastmod>2018-08-24T16:28:49.081Z</lastmod>
     <data>
         <display>
         <title>runtime简介</title>
         <pubTime>2016-05-05T03:48:52.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>runtime</tag>
          
          
            
@@ -48,7 +27,7 @@
     
   <url>
     <loc>http://baidu.com/2016/05/17/reactNative/</loc>
-    <lastmod>2018-08-23T07:45:14.421Z</lastmod>
+    <lastmod>2018-08-24T16:28:32.450Z</lastmod>
     <data>
         <display>
         <title>react native的优缺点</title>
@@ -67,34 +46,18 @@
 
     
   <url>
-    <loc>http://baidu.com/2016/05/17/Native-js/</loc>
-    <lastmod>2018-08-23T07:44:50.498Z</lastmod>
-    <data>
-        <display>
-        <title>Native.js</title>
-        <pubTime>2016-05-17T09:53:15.000Z</pubTime>
-        
-        <tag>Native</tag>
-         
-         
-           
-             
-              <breadCrumb title="Native" url="http://baidu.com/categories/Native/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://baidu.com/2016/05/09/MutipeerConnectivity/</loc>
-    <lastmod>2018-08-23T07:44:33.034Z</lastmod>
+    <lastmod>2018-08-24T16:27:49.990Z</lastmod>
     <data>
         <display>
         <title>iOS之蓝牙简介和使用(二)：MutipeerConnectivity</title>
         <pubTime>2016-05-09T09:52:31.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>蓝牙</tag>
+         
+        <tag>MutipeerConnectivity</tag>
          
          
            
@@ -108,13 +71,15 @@
     
   <url>
     <loc>http://baidu.com/2016/05/09/git/</loc>
-    <lastmod>2018-08-23T07:44:24.574Z</lastmod>
+    <lastmod>2018-08-24T16:27:09.439Z</lastmod>
     <data>
         <display>
         <title>git</title>
         <pubTime>2016-05-09T02:33:04.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>git</tag>
          
          
            
@@ -128,13 +93,41 @@
     
   <url>
     <loc>http://baidu.com/2016/05/09/GameKit/</loc>
-    <lastmod>2018-08-23T07:44:17.191Z</lastmod>
+    <lastmod>2018-08-24T16:26:46.496Z</lastmod>
     <data>
         <display>
         <title>iOS之蓝牙简介和使用(一)：GameKit</title>
         <pubTime>2016-05-09T09:02:43.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>蓝牙</tag>
+         
+        <tag>GameKit</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="http://baidu.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://baidu.com/2016/05/12/easemob/</loc>
+    <lastmod>2018-08-24T16:26:01.778Z</lastmod>
+    <data>
+        <display>
+        <title>cocoaPods导入环信Hyphenate时出的问题</title>
+        <pubTime>2016-05-12T09:55:22.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>cocoaPods</tag>
+         
+        <tag>Hyphenate</tag>
          
          
            
@@ -148,13 +141,15 @@
     
   <url>
     <loc>http://baidu.com/2016/05/06/creatHexo/</loc>
-    <lastmod>2018-08-23T07:44:09.872Z</lastmod>
+    <lastmod>2018-08-24T16:25:20.819Z</lastmod>
     <data>
         <display>
         <title>Hexo搭建个人博客</title>
         <pubTime>2016-05-06T07:01:40.000Z</pubTime>
         
-        <tag>所有文章</tag>
+        <tag>搭建博客</tag>
+         
+        <tag>主题配置</tag>
          
          
            
@@ -167,14 +162,18 @@
 
     
   <url>
-    <loc>http://baidu.com/2016/05/12/easemob/</loc>
-    <lastmod>2018-08-23T07:44:07.883Z</lastmod>
+    <loc>http://baidu.com/2016/05/10/CoreBlueTooth/</loc>
+    <lastmod>2018-08-24T16:19:38.706Z</lastmod>
     <data>
         <display>
-        <title>cocoaPods导入环信Hyphenate时出的问题</title>
-        <pubTime>2016-05-12T09:55:22.000Z</pubTime>
+        <title>CoreBlueTooth</title>
+        <pubTime>2016-05-10T02:02:01.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>蓝牙</tag>
+         
+        <tag>CoreBlueTooth</tag>
          
          
            
@@ -187,14 +186,16 @@
 
     
   <url>
-    <loc>http://baidu.com/2016/05/10/CoreBlueTooth/</loc>
-    <lastmod>2018-08-23T07:43:33.406Z</lastmod>
+    <loc>http://baidu.com/2016/05/19/cocoaPods/</loc>
+    <lastmod>2018-08-24T16:19:11.181Z</lastmod>
     <data>
         <display>
-        <title>CoreBlueTooth</title>
-        <pubTime>2016-05-10T02:02:01.000Z</pubTime>
+        <title>cocoaPods的使用</title>
+        <pubTime>2016-05-19T06:21:59.000Z</pubTime>
         
         <tag>iOS</tag>
+         
+        <tag>cocoaPods</tag>
          
          
            
@@ -205,4 +206,7 @@
     </data>
     </url>
 
+    
+    
+    
 </urlset>

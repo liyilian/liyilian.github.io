@@ -2,9 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://baidu.com/2016/05/05/runtime/</loc>
+    
+    <lastmod>2018-08-24T16:28:49.081Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baidu.com/2016/05/17/reactNative/</loc>
+    
+    <lastmod>2018-08-24T16:28:32.450Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baidu.com/2016/05/09/MutipeerConnectivity/</loc>
+    
+    <lastmod>2018-08-24T16:27:49.990Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baidu.com/2016/05/09/git/</loc>
+    
+    <lastmod>2018-08-24T16:27:09.439Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baidu.com/2016/05/09/GameKit/</loc>
+    
+    <lastmod>2018-08-24T16:26:46.496Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baidu.com/2016/05/12/easemob/</loc>
+    
+    <lastmod>2018-08-24T16:26:01.778Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baidu.com/2016/05/06/creatHexo/</loc>
+    
+    <lastmod>2018-08-24T16:25:20.819Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://baidu.com/2016/05/10/CoreBlueTooth/</loc>
+    
+    <lastmod>2018-08-24T16:19:38.706Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://baidu.com/2016/05/19/cocoaPods/</loc>
     
-    <lastmod>2018-08-24T08:58:12.664Z</lastmod>
+    <lastmod>2018-08-24T16:19:11.181Z</lastmod>
     
   </url>
   
@@ -26,69 +82,6 @@
     <loc>http://baidu.com/tags/index.html</loc>
     
     <lastmod>2018-08-23T08:50:08.726Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/05/runtime/</loc>
-    
-    <lastmod>2018-08-23T07:45:36.424Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/17/reactNative/</loc>
-    
-    <lastmod>2018-08-23T07:45:14.421Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/17/Native-js/</loc>
-    
-    <lastmod>2018-08-23T07:44:50.498Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/09/MutipeerConnectivity/</loc>
-    
-    <lastmod>2018-08-23T07:44:33.034Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/09/git/</loc>
-    
-    <lastmod>2018-08-23T07:44:24.574Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/09/GameKit/</loc>
-    
-    <lastmod>2018-08-23T07:44:17.191Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/06/creatHexo/</loc>
-    
-    <lastmod>2018-08-23T07:44:09.872Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/12/easemob/</loc>
-    
-    <lastmod>2018-08-23T07:44:07.883Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/2016/05/10/CoreBlueTooth/</loc>
-    
-    <lastmod>2018-08-23T07:43:33.406Z</lastmod>
     
   </url>
   
