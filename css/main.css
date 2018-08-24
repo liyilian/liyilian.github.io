@@ -180,7 +180,7 @@ th {
   padding: 0;
 }
 ::selection {
-  background: #262a30;
+  background: #8b5a00;
   color: #fff;
 }
 body {
@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #88d6ac;
+  background: #d5ff67;
 }
 .links-of-blogroll {
   font-size: 13px;
