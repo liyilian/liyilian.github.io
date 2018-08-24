@@ -1101,7 +1101,6 @@ pre .javascript .function {
   background-image: linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
 }
 .site-meta {
-  margin: 0;
   text-align: center;
   padding: 40px 0;
   background: #8b5a00;
@@ -1837,7 +1836,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f0de7c;
+  background: #47f996;
 }
 .links-of-blogroll {
   font-size: 13px;
