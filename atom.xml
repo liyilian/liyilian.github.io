@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Troy的博客</title>
+  <title>Troy&#39;s Blog</title>
   
-  <subtitle>牛逼背后，都是苦逼</subtitle>
+  <subtitle>Only The Strong Survive</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baidu.com/"/>
