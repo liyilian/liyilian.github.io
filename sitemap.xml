@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://baidu.com/about/index.html</loc>
+    
+    <lastmod>2018-08-27T07:02:19.510Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://baidu.com/2016/05/17/Native-js/</loc>
     
     <lastmod>2018-08-24T16:29:47.355Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://baidu.com/2016/05/19/cocoaPods/</loc>
     
     <lastmod>2018-08-24T16:19:11.181Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://baidu.com/about/index.html</loc>
-    
-    <lastmod>2018-08-24T03:26:39.032Z</lastmod>
     
   </url>
   
