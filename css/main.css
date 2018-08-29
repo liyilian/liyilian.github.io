@@ -1839,7 +1839,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #af91ff;
+  background: #ffd5f9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3152,5 +3152,5 @@ body {
   background-image: linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
 }
 .footer {
-  color: #f00;
+  color: #8b5a00;
 }
