@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Troy&#39;s Blog">
 <meta property="og:description" content="一. 查看当前文件下修改1svn status 二. 提交当前文件夹下修改文件12a. svn ci -m &amp;quot;还原confi.h文件 &amp;quot; Additions/heads/Config.h (单个文件)b. svn ci -m “添加多个文件 “空格” 间隔  text1.h  text2.h (多个文件)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-30T08:52:45.051Z">
+<meta property="og:updated_time" content="2018-08-30T08:55:16.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="svn">
 <meta name="twitter:description" content="一. 查看当前文件下修改1svn status 二. 提交当前文件夹下修改文件12a. svn ci -m &amp;quot;还原confi.h文件 &amp;quot; Additions/heads/Config.h (单个文件)b. svn ci -m “添加多个文件 “空格” 间隔  text1.h  text2.h (多个文件)">
@@ -351,7 +351,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-30T16:52:45+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-30T16:55:16+08:00">
                 2018-08-30
               </time>
             
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,032 字
+                  2,004 字
                 </span>
               
 
@@ -567,19 +567,57 @@
 </blockquote>
 <h2 id="十二、SVN-帮助"><a href="#十二、SVN-帮助" class="headerlink" title="十二、SVN 帮助"></a>十二、SVN 帮助</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn help</span><br><span class="line">svn help ci</span><br></pre></td></tr></table></figure>
 <p><strong>以上是常用命令，下面写几个不经常用的</strong></p>
-<h2 id="十三、版本库下的文件和目录列表"><a href="#十三、版本库下的文件和目录列表" class="headerlink" title="十三、版本库下的文件和目录列表"></a>十三、版本库下的文件和目录列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">svn list path 显示path目录下的所有属于版本库的文件和目录</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">简写：</span><br></pre></td></tr></table></figure>
-<p>svn ls</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## 十四、创建纳入版本控制下的新目录</span><br></pre></td></tr></table></figure>
-<p>svn mkdir: 创建纳入版本控制下的新目录。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 用法: </span><br><span class="line">   1. mkdir PATH...</span><br><span class="line">   2. mkdir URL...</span><br><span class="line">   </span><br><span class="line">+ 创建版本控制的目录。</span><br><span class="line">   1. 每一个以工作副本 PATH 指定的目录，都会创建在本地端，并且加入新增调度，以待下一次的提交。</span><br><span class="line">   2. 每个以URL指定的目录，都会透过立即提交于仓库中创建。在这两个情况下，所有的中间目录都必须事先存在。</span><br><span class="line"></span><br><span class="line">## 十五、恢复本地修改</span><br></pre></td></tr></table></figure>
-<p>svn revert: 恢复原始未改变的工作副本文件 (恢复大部份的本地修改)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ revert:用法: </span><br><span class="line">   + revert PATH...</span><br><span class="line"></span><br><span class="line">&gt;注意: 本子命令不会存取网络，并且会解除冲突的状况。但是它不会恢复被删除的目录</span><br><span class="line"></span><br><span class="line">## 十六、代码库URL变更</span><br></pre></td></tr></table></figure>
-<p>svn switch (sw): 更新工作副本至不同的URL。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 用法: </span><br><span class="line">   1. switch URL [PATH]</span><br><span class="line">   2. switch --relocate FROM TO [PATH...]</span><br><span class="line">      1. 更新你的工作副本，映射到一个新的URL，其行为跟“svn update”很像，也会将服务器上文件与本地文件合并。这是将工作副本对应到同一仓库中某个分支或者标记的方法。</span><br><span class="line">      2. 改写工作副本的URL元数据，以反映单纯的URL上的改变。当仓库的根URL变动 (比如方案名或是主机名称变动)，但是工作副本仍旧对映到同一仓库的同一目录时使用这个命令更新工作副本与仓库的对应关系。</span><br><span class="line"></span><br><span class="line">## 十七、解决冲突</span><br></pre></td></tr></table></figure>
-<p>svn resolved: 移除工作副本的目录或文件的“冲突”状态。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 用法: </span><br><span class="line">   + resolved PATH...</span><br><span class="line"></span><br><span class="line">&gt;注意: 本子命令不会依语法来解决冲突或是移除冲突标记；它只是移除冲突的相关文件，然后让 PATH 可以再次提交。</span><br><span class="line">## 十八、输出指定文件或URL的内容。</span><br></pre></td></tr></table></figure>
-<p>svn cat 目标[@版本]…如果指定了版本，将从指定的版本开始查找。<br>svn cat -r PREV filename &gt; filename (PREV 是上一版本,也可以写具体版本号,这样输出结果是可以提交的)</p>
-<p><code>`</code></p>
+<h2 id="十三、版本库下的文件和目录列表"><a href="#十三、版本库下的文件和目录列表" class="headerlink" title="十三、版本库下的文件和目录列表"></a>十三、版本库下的文件和目录列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn list path 显示path目录下的所有属于版本库的文件和目录</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn ls</span><br></pre></td></tr></table></figure>
+<h2 id="十四、创建纳入版本控制下的新目录"><a href="#十四、创建纳入版本控制下的新目录" class="headerlink" title="十四、创建纳入版本控制下的新目录"></a>十四、创建纳入版本控制下的新目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn mkdir: 创建纳入版本控制下的新目录。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>用法: </p>
+<ol>
+<li>mkdir PATH…</li>
+<li>mkdir URL…</li>
+</ol>
+</li>
+<li><p>创建版本控制的目录。</p>
+<ol>
+<li>每一个以工作副本 PATH 指定的目录，都会创建在本地端，并且加入新增调度，以待下一次的提交。</li>
+<li>每个以URL指定的目录，都会透过立即提交于仓库中创建。在这两个情况下，所有的中间目录都必须事先存在。</li>
+</ol>
+</li>
+</ul>
+<h2 id="十五、恢复本地修改"><a href="#十五、恢复本地修改" class="headerlink" title="十五、恢复本地修改"></a>十五、恢复本地修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn revert: 恢复原始未改变的工作副本文件 (恢复大部份的本地修改)。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>revert:用法: <ul>
+<li>revert PATH…</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意: 本子命令不会存取网络，并且会解除冲突的状况。但是它不会恢复被删除的目录</p>
+</blockquote>
+<h2 id="十六、代码库URL变更"><a href="#十六、代码库URL变更" class="headerlink" title="十六、代码库URL变更"></a>十六、代码库URL变更</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn switch (sw): 更新工作副本至不同的URL。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用法: <ol>
+<li>switch URL [PATH]</li>
+<li>switch –relocate FROM TO [PATH…]<ol>
+<li>更新你的工作副本，映射到一个新的URL，其行为跟“svn update”很像，也会将服务器上文件与本地文件合并。这是将工作副本对应到同一仓库中某个分支或者标记的方法。</li>
+<li>改写工作副本的URL元数据，以反映单纯的URL上的改变。当仓库的根URL变动 (比如方案名或是主机名称变动)，但是工作副本仍旧对映到同一仓库的同一目录时使用这个命令更新工作副本与仓库的对应关系。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="十七、解决冲突"><a href="#十七、解决冲突" class="headerlink" title="十七、解决冲突"></a>十七、解决冲突</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn resolved: 移除工作副本的目录或文件的“冲突”状态。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用法: <ul>
+<li>resolved PATH…</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意: 本子命令不会依语法来解决冲突或是移除冲突标记；它只是移除冲突的相关文件，然后让 PATH 可以再次提交。</p>
+</blockquote>
+<h2 id="十八、输出指定文件或URL的内容。"><a href="#十八、输出指定文件或URL的内容。" class="headerlink" title="十八、输出指定文件或URL的内容。"></a>十八、输出指定文件或URL的内容。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn cat 目标[@版本]...如果指定了版本，将从指定的版本开始查找。</span><br><span class="line">svn cat -r PREV filename &gt; filename (PREV 是上一版本,也可以写具体版本号,这样输出结果是可以提交的)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -823,7 +861,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-查看当前文件下修改"><span class="nav-text">一. 查看当前文件下修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-提交当前文件夹下修改文件"><span class="nav-text">二. 提交当前文件夹下修改文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-提交当前文件夹以及文件夹文件"><span class="nav-text">三. 提交当前文件夹以及文件夹文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-删除文件或者文件夹"><span class="nav-text">四. 删除文件或者文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-更新版本"><span class="nav-text">五. 更新版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-恢复本地修改"><span class="nav-text">六. 恢复本地修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-解决冲突"><span class="nav-text">七. 解决冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八-将文件checkout到本地目录"><span class="nav-text">八. 将文件checkout到本地目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-查看文件详细信息"><span class="nav-text">九. 查看文件详细信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十-比较诧异"><span class="nav-text">十. 比较诧异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一-将两个版本之间的差异合并到当前文件"><span class="nav-text">十一. 将两个版本之间的差异合并到当前文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、将文件checkout到本地目录"><span class="nav-text">一、将文件checkout到本地目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、往版本库中添加新的文件"><span class="nav-text">二、往版本库中添加新的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、将改动的文件提交到版本库"><span class="nav-text">三、将改动的文件提交到版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、加锁-解锁"><span class="nav-text">四、加锁/解锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、更新到某个版本"><span class="nav-text">五、更新到某个版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、查看文件或者目录状态"><span class="nav-text">六、查看文件或者目录状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、删除文件"><span class="nav-text">七、删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、查看日志"><span class="nav-text">八、查看日志</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、查看文件详细信息"><span class="nav-text">九、查看文件详细信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#十、比较差异"><span class="nav-text">十、比较差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一、将两个版本之间的差异合并到当前文件"><span class="nav-text">十一、将两个版本之间的差异合并到当前文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二、SVN-帮助"><span class="nav-text">十二、SVN 帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十三、版本库下的文件和目录列表"><span class="nav-text">十三、版本库下的文件和目录列表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-查看当前文件下修改"><span class="nav-text">一. 查看当前文件下修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-提交当前文件夹下修改文件"><span class="nav-text">二. 提交当前文件夹下修改文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-提交当前文件夹以及文件夹文件"><span class="nav-text">三. 提交当前文件夹以及文件夹文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-删除文件或者文件夹"><span class="nav-text">四. 删除文件或者文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-更新版本"><span class="nav-text">五. 更新版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-恢复本地修改"><span class="nav-text">六. 恢复本地修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-解决冲突"><span class="nav-text">七. 解决冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八-将文件checkout到本地目录"><span class="nav-text">八. 将文件checkout到本地目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九-查看文件详细信息"><span class="nav-text">九. 查看文件详细信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十-比较诧异"><span class="nav-text">十. 比较诧异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一-将两个版本之间的差异合并到当前文件"><span class="nav-text">十一. 将两个版本之间的差异合并到当前文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、将文件checkout到本地目录"><span class="nav-text">一、将文件checkout到本地目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、往版本库中添加新的文件"><span class="nav-text">二、往版本库中添加新的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、将改动的文件提交到版本库"><span class="nav-text">三、将改动的文件提交到版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、加锁-解锁"><span class="nav-text">四、加锁/解锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、更新到某个版本"><span class="nav-text">五、更新到某个版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、查看文件或者目录状态"><span class="nav-text">六、查看文件或者目录状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、删除文件"><span class="nav-text">七、删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、查看日志"><span class="nav-text">八、查看日志</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、查看文件详细信息"><span class="nav-text">九、查看文件详细信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#十、比较差异"><span class="nav-text">十、比较差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一、将两个版本之间的差异合并到当前文件"><span class="nav-text">十一、将两个版本之间的差异合并到当前文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二、SVN-帮助"><span class="nav-text">十二、SVN 帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十三、版本库下的文件和目录列表"><span class="nav-text">十三、版本库下的文件和目录列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十四、创建纳入版本控制下的新目录"><span class="nav-text">十四、创建纳入版本控制下的新目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十五、恢复本地修改"><span class="nav-text">十五、恢复本地修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十六、代码库URL变更"><span class="nav-text">十六、代码库URL变更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十七、解决冲突"><span class="nav-text">十七、解决冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十八、输出指定文件或URL的内容。"><span class="nav-text">十八、输出指定文件或URL的内容。</span></a></li></ol></div>
             
 
           </div>
@@ -858,7 +896,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">14.2k</span>
+    <span title="博客全站字数">14.1k</span>
   
 </div>
 
