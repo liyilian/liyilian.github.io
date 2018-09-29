@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="iOS,蓝牙,MutipeerConnectivity," />
+  <meta name="keywords" content="iOS,NSMutableArray," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity蓝牙mutipeerConnectivity简介  iOS 7引入的一个全新框架  多点连接  替代GameKit框架">
-<meta name="keywords" content="iOS,蓝牙,MutipeerConnectivity">
+<meta name="description" content="一. removeObjectAtIndex和removeObject的不同之处 removeObjectAtIndex: 删除指定NSMutableArray中指定index的对象，注意index不能越界。   removeObject: 删除NSMutableArray中所有isEqual:待删对象的对象   从API文档可以看出，两者之间的主要区别是removeObjectAtIndex:最">
+<meta name="keywords" content="iOS,NSMutableArray">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity">
-<meta property="og:url" content="http://baidu.com/2016/05/09/MutipeerConnectivity/index.html">
+<meta property="og:title" content="NSMutableArray删除时遇到的问题">
+<meta property="og:url" content="http://baidu.com/2016/09/20/NSMutableArrayDelete/index.html">
 <meta property="og:site_name" content="Troy&#39;s Blog">
-<meta property="og:description" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity蓝牙mutipeerConnectivity简介  iOS 7引入的一个全新框架  多点连接  替代GameKit框架">
+<meta property="og:description" content="一. removeObjectAtIndex和removeObject的不同之处 removeObjectAtIndex: 删除指定NSMutableArray中指定index的对象，注意index不能越界。   removeObject: 删除NSMutableArray中所有isEqual:待删对象的对象   从API文档可以看出，两者之间的主要区别是removeObjectAtIndex:最">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T16:27:49.990Z">
+<meta property="og:updated_time" content="2018-09-29T06:39:53.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity">
-<meta name="twitter:description" content="iOS之蓝牙简介和使用(二)：MutipeerConnectivity蓝牙mutipeerConnectivity简介  iOS 7引入的一个全新框架  多点连接  替代GameKit框架">
+<meta name="twitter:title" content="NSMutableArray删除时遇到的问题">
+<meta name="twitter:description" content="一. removeObjectAtIndex和removeObject的不同之处 removeObjectAtIndex: 删除指定NSMutableArray中指定index的对象，注意index不能越界。   removeObject: 删除NSMutableArray中所有isEqual:待删对象的对象   从API文档可以看出，两者之间的主要区别是removeObjectAtIndex:最">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://baidu.com/2016/05/09/MutipeerConnectivity/"/>
+  <link rel="canonical" href="http://baidu.com/2016/09/20/NSMutableArrayDelete/"/>
 
 
 
 
 
-  <title>iOS之蓝牙简介和使用(二)：MutipeerConnectivity | Troy's Blog</title>
+  <title>NSMutableArray删除时遇到的问题 | Troy's Blog</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://baidu.com/2016/05/09/MutipeerConnectivity/">
+    <link itemprop="mainEntityOfPage" href="http://baidu.com/2016/09/20/NSMutableArrayDelete/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Troy">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS之蓝牙简介和使用(二)：MutipeerConnectivity</h1>
+          <h1 class="post-title" itemprop="name headline">NSMutableArray删除时遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-09T17:52:31+08:00">
-                2016-05-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-20T14:40:26+08:00">
+                2016-09-20
               </time>
             
 
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-25T00:27:49+08:00">
-                2018-08-25
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-29T14:39:53+08:00">
+                2018-09-29
               </time>
             
           </span>
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,008 字
+                  719 字
                 </span>
               
 
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -438,66 +438,51 @@
       
 
       
-        <hr>
-<h2 id="iOS之蓝牙简介和使用-二-：MutipeerConnectivity"><a href="#iOS之蓝牙简介和使用-二-：MutipeerConnectivity" class="headerlink" title="iOS之蓝牙简介和使用(二)：MutipeerConnectivity"></a>iOS之蓝牙简介和使用(二)：MutipeerConnectivity</h2><h2 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h2><h3 id="mutipeerConnectivity"><a href="#mutipeerConnectivity" class="headerlink" title="mutipeerConnectivity"></a>mutipeerConnectivity</h3><p>简介</p>
-<ul>
-<li><p>iOS 7引入的一个全新框架</p>
-</li>
-<li><p>多点连接</p>
-</li>
-<li><p>替代GameKit框架</p>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>多用于文件的传输</p>
-</li>
-<li><p>iOS设备不联网也能跟附近的人聊天</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* FireChat</span><br><span class="line">* See You Around</span><br><span class="line">* 以上近场聊天App都是基于mutipeerConnectivity框架</span><br></pre></td></tr></table></figure>
-<ul>
-<li>搜索和传输的方式</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 双方WIFI和蓝牙都没有打开：无法实现</span><br><span class="line">* 双方都开启蓝牙：通过蓝牙发现和传输</span><br><span class="line">* 双方都开启WIFI：通过WIFI Direct发现和传输，速度接近AirDrop</span><br><span class="line">* 双方同时开启了WIFI和蓝牙：模拟AirDrop，通过低功耗蓝牙技术扫描发现握手，然后通过WIFI Direct传输</span><br></pre></td></tr></table></figure>
-<h3 id="案例界面搭建"><a href="#案例界面搭建" class="headerlink" title="案例界面搭建"></a>案例界面搭建</h3><h3 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h3><ul>
-<li>创建MCSession对象用于存放当前连接的会话</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建MCSession对象</span><br><span class="line">// initWithPeer：设备的ID</span><br><span class="line">// 用于存放当前的连接的会话</span><br><span class="line">self.mc_Session = [ [MCSession alloc]initWithPeer:[[MCPeerID alloc] initWithDisplayName:[UIDevice currentDevice].name]];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>开启广播对象，通知正在搜索的设备他们是可用的</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *   只要开启了可被搜索的广播，那么连接蓝牙按钮就不可点</span><br><span class="line"> */</span><br><span class="line">- (IBAction)foundConnect:(id)sender &#123;</span><br><span class="line">    UISwitch *switchBtn = (UISwitch *)sender;</span><br><span class="line">    if (switchBtn.isOn) &#123;</span><br><span class="line">        // 广播对象，告诉其它的设备他们是可用的</span><br><span class="line">        if (self.advertiserAssistant == nil) &#123;</span><br><span class="line">            // 创建广播对象</span><br><span class="line">            //  initWithServiceType： 广播类型的标示（因为广播可能比较多，所以最好每个广播绑定一个唯一标示）</span><br><span class="line">            //  session：当前会话</span><br><span class="line">            //  discoveryInfo： 广播信息</span><br><span class="line">            self.advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:SERVICE_TYPE discoveryInfo:nil session:self.mc_Session];</span><br><span class="line">        &#125;</span><br><span class="line">        // 开启广播</span><br><span class="line">        [self.advertiserAssistant start];</span><br><span class="line">        self.connectBT.enabled = NO;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.connectBT.enabled = YES;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>开始搜索蓝牙设备</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)connectBlueTooth &#123;</span><br><span class="line">    // 创建搜索蓝牙设备控制器</span><br><span class="line">    MCBrowserViewController *mbVC = [[MCBrowserViewController alloc]initWithServiceType:SERVICE_TYPE session:self.mc_Session];</span><br><span class="line">    // 设置控制器代理</span><br><span class="line">    mbVC.delegate = self;</span><br><span class="line">    // 跳转到搜索控制器</span><br><span class="line">    [self presentViewController:mbVC animated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="选择数据"><a href="#选择数据" class="headerlink" title="选择数据"></a>选择数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)selectImage &#123;</span><br><span class="line">    // 1. 创建图片选择器</span><br><span class="line">    UIImagePickerController *imgPicker = [[UIImagePickerController alloc]init];</span><br><span class="line">    // 2. 判断图片选择器是否可用</span><br><span class="line">    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) &#123;</span><br><span class="line">        // 选择器打开的类型</span><br><span class="line">        imgPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;</span><br><span class="line">        // 设置代理</span><br><span class="line">        imgPicker.delegate = self;</span><br><span class="line">        // 打开图片选择器</span><br><span class="line">        [self presentViewController:imgPicker animated:YES completion:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>图片选择器代理中获取数据</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 选择完毕调用</span><br><span class="line">- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary&lt;NSString *,id&gt; *)info</span><br><span class="line">&#123;</span><br><span class="line">//    NSLog(@&quot;info == %@&quot;,info);</span><br><span class="line">    // 设置显示图片</span><br><span class="line">    self.showImage.image = info[UIImagePickerControllerOriginalImage];</span><br><span class="line">    // 隐藏图片显示器</span><br><span class="line">    [picker dismissViewControllerAnimated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在搜索控制器的连接完成的代理方法中隐藏搜索控制器</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  连接完成</span><br><span class="line"> *</span><br><span class="line"> *  @param browserViewController 搜索控制器</span><br><span class="line"> */</span><br><span class="line">- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController</span><br><span class="line">&#123;</span><br><span class="line">    [browserViewController dismissViewControllerAnimated:YES completion:nil];</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h3><ul>
-<li>实现搜索控制器的代理方法，获取连接上的设备ID</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - MCBrowserViewControllerDelegate</span><br><span class="line">/**</span><br><span class="line"> *  连接成功</span><br><span class="line"> *</span><br><span class="line"> *  @param browserViewController 搜索控制器</span><br><span class="line"> *  @param peerID                连接上的设备ID</span><br><span class="line"> *  @param info                  连接的信息</span><br><span class="line"> *</span><br><span class="line"> *  @return                      YES ： 只发送连接上的用户</span><br><span class="line"> */</span><br><span class="line">- (BOOL)browserViewController:(MCBrowserViewController *)browserViewController</span><br><span class="line">      shouldPresentNearbyPeer:(MCPeerID *)peerID</span><br><span class="line">            withDiscoveryInfo:(nullable NSDictionary&lt;NSString *, NSString *&gt; *)info</span><br><span class="line">&#123;</span><br><span class="line">    self.peerID = peerID;</span><br><span class="line">    NSLog(@&quot;info == %@   peer = %@&quot;,info, peerID);</span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>将图片发送给连接上的ID</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)sendImage &#123;</span><br><span class="line">    // 获取图片</span><br><span class="line">    UIImage *image = self.showImage.image;</span><br><span class="line">    // 将图片转换成NSData类型</span><br><span class="line">    NSData *data = UIImagePNGRepresentation(image);</span><br><span class="line">    /**</span><br><span class="line">     *  发送数据</span><br><span class="line">     *  toPeers ： 发给的设备ID的数组</span><br><span class="line">     *  withMode： 发送模式，是否是安全模式</span><br><span class="line">     */</span><br><span class="line">    if (self.peerID != nil) &#123;</span><br><span class="line">        [self.mc_Session sendData:data toPeers:@[self.peerID] withMode:MCSessionSendDataUnreliable error:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><ul>
-<li>实现MCSession的代理方法接受数据</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">    NSLog(@&quot;data = %@ , peer = %@&quot;,data,peerID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="显示数据"><a href="#显示数据" class="headerlink" title="显示数据"></a>显示数据</h3><ul>
-<li>在MCSeesion代理方法中设置获取过来的数据</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 接收的数据</span><br><span class="line">- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;%s %d&quot;,__func__,__LINE__);</span><br><span class="line">//    NSLog(@&quot;data = %@ , peer = %@&quot;,data,peerID);</span><br><span class="line">    UIImage *image = [[UIImage alloc]initWithData:data];</span><br><span class="line">    if(image != nil)&#123;</span><br><span class="line">        // 设置数据</span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            self.showImage.image = image;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>原文地址：<a href="#http://blog.csdn.net/wzc10101415/article/details/55101346">http://blog.csdn.net/wzc10101415/article/details/55101346</a></p>
+        <h2 id="一-removeObjectAtIndex和removeObject的不同之处"><a href="#一-removeObjectAtIndex和removeObject的不同之处" class="headerlink" title="一. removeObjectAtIndex和removeObject的不同之处"></a>一. removeObjectAtIndex和removeObject的不同之处</h2><blockquote>
+<p><code>removeObjectAtIndex:</code><br> 删除指定NSMutableArray中指定index的对象，注意index不能越界。</p>
+</blockquote>
+<blockquote>
+<p><code>removeObject:</code><br> 删除NSMutableArray中所有isEqual:待删对象的对象</p>
+</blockquote>
+<blockquote>
+<p>从API文档可以看出，两者之间的主要区别是<code>removeObjectAtIndex:</code>最多只能删除一个对象，而<code>removeObject:</code>可以删除多个对象（只要符合isEqual:的都删除掉）。<br><a id="more"></a></p>
+</blockquote>
+<h2 id="二-在NSMutableArray循环中删除对象"><a href="#二-在NSMutableArray循环中删除对象" class="headerlink" title="二. 在NSMutableArray循环中删除对象"></a>二. 在NSMutableArray循环中删除对象</h2><h3 id="1-可能多删的做法"><a href="#1-可能多删的做法" class="headerlink" title="1. 可能多删的做法"></a>1. 可能多删的做法</h3><p>删除数组中的第一个@”remove”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- (void)removeObjectsUseFor</span><br><span class="line">&#123;   </span><br><span class="line">    NSMutableArray *contents = [@[@&quot;how&quot;, @&quot;to&quot;, @&quot;remove&quot;, @&quot;remove&quot;, @&quot;object&quot;] mutableCopy];</span><br><span class="line">    for (NSInteger i = 0; i != contents.count; ++i) &#123;</span><br><span class="line">        NSString *var = contents[i];</span><br><span class="line">        if ([var isEqualToString:@&quot;remove&quot;]) &#123;</span><br><span class="line">            [contents removeObject:var];</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;%@&quot;, contents);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2016-09-20 21:14:13.541 RemoveObject[5862:310398] (</span><br><span class="line">    how,</span><br><span class="line">    to,</span><br><span class="line">    object</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从<code>removeObject:</code>的说明中可以看出，<code>removeObject:</code>不仅删除该对象本身，而且删除NSMutableArray中所有<code>isEqual:</code>待删对象的对象</p>
+</blockquote>
+<h3 id="2-可能漏删的做法"><a href="#2-可能漏删的做法" class="headerlink" title="2. 可能漏删的做法"></a>2. 可能漏删的做法</h3><p>删除数组中所有的@”remove”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)removeObjectsUseFor</span><br><span class="line">&#123;   </span><br><span class="line">    NSMutableArray *contents = [@[@&quot;how&quot;, @&quot;to&quot;, @&quot;remove&quot;, @&quot;remove&quot;, @&quot;object&quot;] mutableCopy];</span><br><span class="line">    for (NSInteger i = 0; i != contents.count; ++i) &#123;</span><br><span class="line">        NSString *var = contents[i];</span><br><span class="line">        if ([var isEqualToString:@&quot;remove&quot;]) &#123;</span><br><span class="line">            [contents removeObjectAtIndex:i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;%@&quot;, contents);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2016-09-20 21:19:59.615 RemoveObject[5886:315162] (</span><br><span class="line">    how,</span><br><span class="line">    to,</span><br><span class="line">    remove,</span><br><span class="line">    object</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="3-引发崩溃的做法"><a href="#3-引发崩溃的做法" class="headerlink" title="3. 引发崩溃的做法"></a>3. 引发崩溃的做法</h3><p>删除数组中所有的@”remove”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (void)removeObjectsUseForIn</span><br><span class="line">&#123;</span><br><span class="line">    NSMutableArray *contents = [@[@&quot;how&quot;, @&quot;to&quot;, @&quot;remove&quot;, @&quot;object&quot;] mutableCopy];</span><br><span class="line">    for (NSString *var in contents) &#123;</span><br><span class="line">        if ([var isEqualToString:@&quot;remove&quot;]) &#123;</span><br><span class="line">            [contents removeObject:var];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;%@&quot;, contents);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：崩溃</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. svn (del, remove, rm)  没搞明白2016-09-20 21:27:40.337 RemoveObject[5915:321407] *** Terminating app due to uncaught exception &apos;NSGenericException&apos;, reason: &apos;*** Collection &lt;__NSArrayM: 0x7f9388c95580&gt; was mutated while being enumerated.&apos;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不要在for in 循环中删除数组内部对象。</p>
+</blockquote>
+<h3 id="4-正确但别扭的做法"><a href="#4-正确但别扭的做法" class="headerlink" title="4. 正确但别扭的做法"></a>4. 正确但别扭的做法</h3><p>删除数组中所有的@”remove”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)removeObjectsReversed</span><br><span class="line">&#123;</span><br><span class="line">    NSMutableArray *contents = [@[@&quot;how&quot;, @&quot;to&quot;, @&quot;remove&quot;, @&quot;remove&quot;, @&quot;object&quot;] mutableCopy];</span><br><span class="line">    for (NSInteger i = contents.count - 1; i &gt;= 0; --i) &#123;</span><br><span class="line">        NSString *var = contents[i];</span><br><span class="line">        if ([var isEqualToString:@&quot;remove&quot;]) &#123;</span><br><span class="line">            [contents removeObjectAtIndex:i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;%@&quot;, contents);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2016-09-20 21:31:37.655 RemoveObject[5934:325316] (</span><br><span class="line">    how,</span><br><span class="line">    to,</span><br><span class="line">    object</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>倒序删除，正确但有点别扭！</p>
+</blockquote>
+<h3 id="5-优雅的做法"><a href="#5-优雅的做法" class="headerlink" title="5. 优雅的做法"></a>5. 优雅的做法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)removeObjectsUseEnumration</span><br><span class="line">&#123;</span><br><span class="line">    NSMutableArray *contents = [@[@&quot;how&quot;, @&quot;remove&quot;, @&quot;to&quot;, @&quot;remove&quot;, @&quot;object&quot;] mutableCopy];</span><br><span class="line">    NSIndexSet *indexSet =</span><br><span class="line">        [contents indexesOfObjectsPassingTest:^BOOL(NSString *  _Nonnull var, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">            return [var isEqualToString:@&quot;remove&quot;];</span><br><span class="line">        &#125;];</span><br><span class="line">    [contents removeObjectsAtIndexes:indexSet];</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;%@&quot;, indexSet);</span><br><span class="line">    NSLog(@&quot;%@&quot;, contents);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2016-07-31 22:10:42.404 RemoveObject[6014:338210] &lt;NSIndexSet: 0x7fb73a516040&gt;[number of indexes: 2 (in 2 ranges), indexes: (1 3)]</span><br><span class="line">2016-07-31 22:10:42.404 RemoveObject[6014:338210] (</span><br><span class="line">    how,</span><br><span class="line">    to,</span><br><span class="line">    object</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>先通过<code>indexesOfObjectsPassingTest:</code>把待删除对象的index找出来，再调用<code>removeObjectsAtIndexes:</code>进行一次性删除。</p>
+</blockquote>
+<h2 id="三-总结"><a href="#三-总结" class="headerlink" title="三. 总结"></a>三. 总结</h2><ol>
+<li>不建议在NSMutableArray循环中使用removeObject:删除该NSMutableArray内部对象，此举可能引发误删，如2.1所示；</li>
+<li>不建议在NSMutableArray的for in 循环中删除对象，此举可能引发崩溃，如2.3所示；</li>
+<li>建议删除NSMutableArray内部对象时，先拿到待删对象的index，再进行一次性删除，如2.5所示。</li>
+</ol>
 
       
     </div>
@@ -527,7 +512,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://baidu.com/2016/05/09/MutipeerConnectivity/" title="iOS之蓝牙简介和使用(二)：MutipeerConnectivity">http://baidu.com/2016/05/09/MutipeerConnectivity/</a>
+    <a href="http://baidu.com/2016/09/20/NSMutableArrayDelete/" title="NSMutableArray删除时遇到的问题">http://baidu.com/2016/09/20/NSMutableArrayDelete/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -544,9 +529,7 @@
           
             <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
           
-            <a href="/tags/蓝牙/" rel="tag"><i class="fa fa-tag"></i> 蓝牙</a>
-          
-            <a href="/tags/MutipeerConnectivity/" rel="tag"><i class="fa fa-tag"></i> MutipeerConnectivity</a>
+            <a href="/tags/NSMutableArray/" rel="tag"><i class="fa fa-tag"></i> NSMutableArray</a>
           
         </div>
       
@@ -558,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/09/GameKit/" rel="next" title="iOS之蓝牙简介和使用(一)：GameKit">
-                <i class="fa fa-chevron-left"></i> iOS之蓝牙简介和使用(一)：GameKit
+              <a href="/2016/07/23/SVN/" rel="next" title="svn">
+                <i class="fa fa-chevron-left"></i> svn
               </a>
             
           </div>
@@ -568,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/10/CoreBlueTooth/" rel="prev" title="CoreBlueTooth">
-                CoreBlueTooth <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/23/iPhoneX/" rel="prev" title="iPhoneX适配">
+                iPhoneX适配 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -747,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS之蓝牙简介和使用-二-：MutipeerConnectivity"><span class="nav-text">iOS之蓝牙简介和使用(二)：MutipeerConnectivity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#蓝牙"><span class="nav-text">蓝牙</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mutipeerConnectivity"><span class="nav-text">mutipeerConnectivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例界面搭建"><span class="nav-text">案例界面搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接设备"><span class="nav-text">连接设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择数据"><span class="nav-text">选择数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送数据"><span class="nav-text">发送数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收数据"><span class="nav-text">接收数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示数据"><span class="nav-text">显示数据</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-removeObjectAtIndex和removeObject的不同之处"><span class="nav-text">一. removeObjectAtIndex和removeObject的不同之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-在NSMutableArray循环中删除对象"><span class="nav-text">二. 在NSMutableArray循环中删除对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-可能多删的做法"><span class="nav-text">1. 可能多删的做法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-可能漏删的做法"><span class="nav-text">2. 可能漏删的做法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-引发崩溃的做法"><span class="nav-text">3. 引发崩溃的做法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-正确但别扭的做法"><span class="nav-text">4. 正确但别扭的做法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-优雅的做法"><span class="nav-text">5. 优雅的做法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-总结"><span class="nav-text">三. 总结</span></a></li></ol></div>
             
 
           </div>
